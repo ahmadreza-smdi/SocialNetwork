@@ -1,7 +1,6 @@
 # Internet Engineering
 
-This project represents the internet engineering course of
-**University of Kashan IE course** of *2018*.
+This project represents **University of Kashan IE course** of *2018*.
 
 The contributors to this project are as listed.
 
