@@ -8,7 +8,7 @@ The contributors to this project are as listed.
 
 The Project advisors :
 **Professor Ahmad Yoosofan**. – [email](yoosofan@kashanu.ac.ir) – [Gitlab repo](@usofan)
- ** Alireza mohammadi**. – [email]() – [Gitlab repo](@alireza_mohammadi)
+ ** Alireza mohammadi**. – [email](email@gmail.com) – [Gitlab repo](@alireza_mohammadi)
 
 For more info, visit the following pages.
 * Contributing guide [CONTRIBUTING.md](CONTRIBUTING.md)
