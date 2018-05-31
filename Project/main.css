@@ -1,0 +1,64 @@
+#register{
+    position: absolute;
+	top: 0px;
+	width: 88%;	
+	padding: 18px 6% 60px 6%;
+	margin:0  35px;
+	/* border: 1px solid rgba(189, 147, 163, 0.8);
+	/* box-shadow: 0pt 2px 5px rgba(105, 108, 109,  0.7),	0px 0px 8px 5px rgba(208, 223, 226, 0.4) inset; */
+	-webkit-box-shadow: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;	
+	z-index: 21;
+}
+
+* {box-sizing: border-box}
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+  }
+input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+}
+/* Set a style for all buttons */
+/* button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+} */
+
+.clearbtn {
+    padding: 14px 20px;
+    background-color: #f44336;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: #474e5d;
+    padding-top: 50px;
+  }
+
+label{
+    font-family: "Times New Roman", Times, serif;
+}

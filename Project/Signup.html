@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Home</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+        <script src="main.js"></script>
+    </head>
+    <body>
+        <div id="register">
+            <section>
+                <h1>Sign Up</h1>
+                <p>Please fill in this form to create an account.</p>
+                 <hr>
+                <form name="register" action="" method="POST">
+                    <label for="name"><b>Name</b></label><br>
+                    <input type="text" name="name" required="required"><br><br>
+                    
+                    <label for="username"><b>Username</b></label><br>
+                    <input type="text" name="username" required="required"><br><br>
+
+                    <label for="password"><b>Password</b></label><br>
+                    <input type="password" name="password" required="required"><br><br>
+
+                    <label for="location"><b>Location</b></label><br>
+                    <input type="text" name="location"><br><br>
+                    
+                    <label for="birthdate"><b>Birthdate</b></label><br>
+                    <input type="date" name="birthdate"><br><br>
+                    
+                    <label for="phone_number"><b>Phone number</b></label><br>
+                    <input type="tel" name="phone_number"><br><br>
+
+                    <label for="email"><b>Email</b></label><br>
+                    <input type="email" name="email" required="required"><br><br>
+
+                    <label for="bio"><b>Bio</b></label><br>
+                    <textarea name="bio" id="" cols="30" rows="10"></textarea><br><br>
+
+                    <label for="profile_picture"><b>Profile picture</b></label><br>
+                    <input type="file" name="profile_picture"><br><br>
+
+                    <label>
+                        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px" required="required"> Remember me
+                    </label><br>
+                    
+                    <label>
+                        <input type="checkbox" checked="checked" name="term" style="margin-bottom:15px" required="required"> Agree to terms and privacy
+                    </label><br>
+
+
+                    <button type="reset" id='clearbtn'>Clear</button>
+                    <input type="submit" >
+
+                </form>
+            </section> 
+        </div>
+    </body>
+</html>

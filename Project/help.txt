@@ -1,0 +1,2 @@
+This project is simple social network like twitter.
+I develop this project piece by piece .
