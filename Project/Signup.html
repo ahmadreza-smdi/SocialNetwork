@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <img src="logo.png" alt="Logo">
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Home</title>
+        <title>Sign Up</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
         <script src="main.js"></script>
     </head>
-    <body>
-        <div id="register">
-            <section>
-                <h1>Sign Up</h1>
-                <p>Please fill in this form to create an account.</p>
-                 <hr>
-                <form name="register" action="" method="POST">
+    <body background='background1.jpg'>
+        <div id="register" align='center'>
+            <section style="font-family:'Courier New', Courier, monospace">
+                <h1 align='center'><b><b>Sign Up</b></b></h1>
+                <p align='center'><b>Fill The Form To Create Account</b></p>
+                 <hr><br><br>
+                <form name="register" action="" method="POST" >
                     <label for="name"><b>Name</b></label><br>
                     <input type="text" name="name" required="required"><br><br>
                     
@@ -27,9 +28,6 @@
                     <label for="location"><b>Location</b></label><br>
                     <input type="text" name="location"><br><br>
                     
-                    <label for="birthdate"><b>Birthdate</b></label><br>
-                    <input type="date" name="birthdate"><br><br>
-                    
                     <label for="phone_number"><b>Phone number</b></label><br>
                     <input type="tel" name="phone_number"><br><br>
 
@@ -38,6 +36,10 @@
 
                     <label for="bio"><b>Bio</b></label><br>
                     <textarea name="bio" id="" cols="30" rows="10"></textarea><br><br>
+
+                    <label for="birthdate"><b>Birthdate</b></label><br>
+                    <input type="date" name="birthdate"><br><br>
+                    
 
                     <label for="profile_picture"><b>Profile picture</b></label><br>
                     <input type="file" name="profile_picture"><br><br>
