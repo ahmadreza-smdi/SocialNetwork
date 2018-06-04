@@ -62,3 +62,39 @@ hr {
 label{
     font-family: style="font-family:'Courier New', Courier, monospace";
 }
+
+
+@keyframes mymove {
+    0%   {top: 0px;}
+    25%  {top: 200px;}
+    50%  {top: 100px;}
+    75%  {top: 200px;}
+    100% {top: 0px;}
+}
+
+
+#homecomming{
+    animation-duration: 2s;
+    animation-name: slidein;
+    animation-delay: 2s;
+    animation-fill-mode: backwards;
+  }
+  
+  @keyframes slidein {
+    from {
+      margin-left: 0%;
+      width: 300%; 
+    }
+  
+    to {
+      margin-right:100%;
+      width: 100%;
+    }
+  }
+
+
+
+#welcom{
+    animation-duration: 2s;
+    animation-name: slidein;
+}

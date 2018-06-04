@@ -15,7 +15,7 @@
                 <h1 align='center'><b><b>Sign Up</b></b></h1>
                 <p align='center'><b>Fill The Form To Create Account</b></p>
                  <hr><br><br>
-                <form name="register" action="" method="POST" >
+                <form name="register" action="" method="POST" enctype="multipart/form-data">
                     <label for="name"><b>Name</b></label><br>
                     <input type="text" name="name" required="required"><br><br>
                     
@@ -54,7 +54,7 @@
 
 
                     <button type="reset" id='clearbtn'>Clear</button>
-                    <input type="submit" >
+                    <input type="submit" ‫;‪onclick="this.disabled=true‬;this.form.submit()" >
 
                 </form>
             </section> 
