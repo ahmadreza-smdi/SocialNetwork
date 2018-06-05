@@ -11,7 +11,22 @@ def generateRandomString(length):
     s = string.ascii_lowercase + string.digits + string.ascii_uppercase
     return str(''.join(random.sample(s, length)))
 
+
+class MainHandler(tornado.web.RequestHandler):
+    def get(self):
+        self.render("index.html")
+
+
+
+class SignInHandler(tornado.web.RequestHandler):
+    def get(self):
+        self.render("Signin.html")
+
 class SignUpHandler(tornado.web.RequestHandler):
+    def get(self):
+        self.render("Signup.html")
+   
+   
     def post(self):
         name = self.get_argument('name')
         username = self.get_argument('username')
@@ -34,12 +49,15 @@ class SignUpHandler(tornado.web.RequestHandler):
 def make_app():
 
     settings = {
+        "static_path": os.path.join(os.path.dirname(__file__), "static"),
         "template_path": os.path.join(os.path.dirname(__file__), "templates"),
         "cookie_secret": generateRandomString(50),
     }
 
     return tornado.web.Application([
+        (r"/", MainHandler),
         (r"/signup", SignUpHandler),
+        (r"/signin",SignInHandler)
     ], **settings)
 
 
