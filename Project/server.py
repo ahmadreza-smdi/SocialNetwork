@@ -34,8 +34,7 @@ class SignInHandler(BaseHandler):
 
         else:
             self.set_secure_cookie("user",res[0])
-            self.write("welcom"+res[0])
-
+            self.render("firstpage.html")
 class ForgetPassHandler(BaseHandler):
     def get(self):
         self.render("forgetpass.html")
@@ -86,7 +85,8 @@ def make_app():
         (r"/", MainHandler),
         (r"/signup", SignUpHandler),
         (r"/signin",SignInHandler),
-        (r"/forgetpass",ForgetPassHandler)
+        (r"/forgetpass",ForgetPassHandler),
+        
     ], **settings)
 
 

@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html>
-    {% include navbar.html%}
     <head>
-        <!--<nav>
-            <a href="./index.html">Home</a>
-            <a href="./Signup.html">Sign up</a>
-            <a href="./Signin.html">Sign in</a>
-        </nav>-->
+        {%block nav%}
+        {% include navbar.html%}
+        {%end%}
         <img src="static/logo/logo.png" alt="Logo">
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
