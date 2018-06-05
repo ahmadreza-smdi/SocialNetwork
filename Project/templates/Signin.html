@@ -2,9 +2,11 @@
 {%block title%} Login {%end%}
 {%block background%}<body background='static/background/background1.jpg'>{%end%}
 {%block body %}
-
 <div id="login" align='center'>
     <section style="font-family:'Courier New', Courier, monospace">
+        {% if greeting=='true'%} <p>You've successfully signed up you may now login</p>{%end%}
+        {% if wrong=='true'%} <p>Username or password wrong</p>{%end%}
+         
         <h1 align='center' style="font-family:'Courier New', Courier, monospace"><b><b>Sign In</b></b></h1>
         <p align='center' style="font-family:'Courier New', Courier, monospace">Please Fill The Form To Login</p>
         <hr><br><br>
@@ -18,6 +20,9 @@
             <button type="reset" id='clearbtn'>Clear</button>
             <input type="submit" ‫;‪onclick="this.disabled=true‬;this.form.submit()" >
 
+            {% if wrong=='true'%} 
+            <a href="/forgetpass"> Forget password</a>
+            {%end%}
             <p> {%block mis%} {%end%}</p>
             <label>
                 <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px" required="required"> Remember me

@@ -21,7 +21,7 @@ class MainHandler(BaseHandler):
 
 class SignInHandler(BaseHandler):
     def get(self):
-        self.render("Signin.html")
+        self.render("Signin.html",greeting='false',wrong='false')
 
     def post(self):
         username = self.get_argument("username")
@@ -30,20 +30,28 @@ class SignInHandler(BaseHandler):
         cur = self.application.db.execute(query,[username,password])
         res = cur.fetchone()
         if not res:
-            self.render("Signin.html")
+            self.render("Signin.html",greeting='false',wrong='true')
 
         else:
             self.set_secure_cookie("user",res[0])
             self.write("welcom"+res[0])
 
+class ForgetPassHandler(BaseHandler):
+    def get(self):
+        self.render("forgetpass.html")
+
+
+
+class LogOut(BaseHandler):
+    @tornado.web.authenticated
+    def get(self):
+        self.clear_cookie("user")
+        self.redirect("/signin")
+
 class SignUpHandler(BaseHandler):
+
     def get(self):
         self.render("Signup.html")
-        if not self.get_cookie("mycookie"):
-            self.set_cookie("mycookie", "myvalue")
-            self.write("Your cookie was not set yet!")
-        else:
-            self.write("Your cookie was set!")
    
    
     def post(self):
@@ -62,7 +70,7 @@ class SignUpHandler(BaseHandler):
             [name,username,password,location,birthdate,phone_number,email,bio,agreement,0,0]
         )
         self.application.db.commit()
-        self.write('Done Successfully')
+        self.render("Signin.html",greeting='true')
 
 def make_app():
 
@@ -70,12 +78,15 @@ def make_app():
         "static_path": os.path.join(os.path.dirname(__file__), "static"),
         "template_path": os.path.join(os.path.dirname(__file__), "templates"),
         "cookie_secret": generateRandomString(50),
+        "login_url": "/signin",
+
     }
 
     return tornado.web.Application([
         (r"/", MainHandler),
         (r"/signup", SignUpHandler),
-        (r"/signin",SignInHandler)
+        (r"/signin",SignInHandler),
+        (r"/forgetpass",ForgetPassHandler)
     ], **settings)
 
 

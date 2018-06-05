@@ -98,3 +98,43 @@ label{
     animation-duration: 2s;
     animation-name: slidein;
 }
+
+/* #navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+#navbar:li {
+    display: inline;
+    } */
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    }
+        
+li {
+    display: inline;
+}
+#navbar a:link, a:visited {
+    display: inline;
+    width: 100px;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    color: #FFFFFF;
+    background-color:teal;
+    text-align: center;
+    padding: 4px;
+    text-decoration: none;
+    text-transform: uppercase;
+    }
+     
+#navbar a:hover, a:active {
+background-color:rgb(7, 46, 46);
+}
+#navbar {
+    position: fixed;
+    top: 10px;
+    width: 100%;
+}​
