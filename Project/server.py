@@ -5,26 +5,45 @@ import random
 import string
 import sqlite3
 
-
+class BaseHandler(tornado.web.RequestHandler):
+    def get_current_user(self):
+        return self.get_secure_cookie("user")
 
 def generateRandomString(length):
     s = string.ascii_lowercase + string.digits + string.ascii_uppercase
     return str(''.join(random.sample(s, length)))
 
 
-class MainHandler(tornado.web.RequestHandler):
+class MainHandler(BaseHandler):
     def get(self):
         self.render("index.html")
 
 
-
-class SignInHandler(tornado.web.RequestHandler):
+class SignInHandler(BaseHandler):
     def get(self):
         self.render("Signin.html")
 
-class SignUpHandler(tornado.web.RequestHandler):
+    def post(self):
+        username = self.get_argument("username")
+        password = self.get_argument("password")
+        query = 'SELECT * FROM "member" WHERE "m_username" = ? AND "m_password"=?'
+        cur = self.application.db.execute(query,[username,password])
+        res = cur.fetchone()
+        if not res:
+            self.render("Signin.html")
+
+        else:
+            self.set_secure_cookie("user",res[0])
+            self.write("welcom"+res[0])
+
+class SignUpHandler(BaseHandler):
     def get(self):
         self.render("Signup.html")
+        if not self.get_cookie("mycookie"):
+            self.set_cookie("mycookie", "myvalue")
+            self.write("Your cookie was not set yet!")
+        else:
+            self.write("Your cookie was set!")
    
    
     def post(self):
@@ -36,12 +55,11 @@ class SignUpHandler(tornado.web.RequestHandler):
         email = self.get_argument('email')
         bio = self.get_argument('bio')
         birthdate = self.get_argument('birthdate')
-        profile_picture = self.get_argument('profile_picture')
         agreement = self.get_argument('agreement')
 
         self.application.db.execute(
-            "INSERT INTO member VALUES(?,?,?,?,?,?,?,?,?,?);",
-            [name,username,password,location,birthdate,phone_number,email,bio,profile_picture,agreement]
+            "INSERT INTO member VALUES(?,?,?,?,?,?,?,?,?,?,?);",
+            [name,username,password,location,birthdate,phone_number,email,bio,agreement,0,0]
         )
         self.application.db.commit()
         self.write('Done Successfully')
