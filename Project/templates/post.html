@@ -1,0 +1,20 @@
+{%extends base.html%}
+{%block background%}<body background='static/background/background1.jpg'>{%end%}
+{%block title%} Settings {%end%}
+{%block body%}
+<div align='center'>
+    <div id = 'post ' style="font-family: 'Courier New', Courier, monospace">
+        <form action="/post" method="POST">
+
+            <label for="posttt"><b>Post</b> </label>
+            <textarea name="posttt" id="" cols="30" rows="10" required></textarea>
+
+
+            <input type="submit" ‫;‪onclick="this.disabled=true‬;this.form.submit()" >
+        </form>
+        </div>  
+</div>
+
+
+
+{%end%}

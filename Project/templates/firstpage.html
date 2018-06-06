@@ -3,7 +3,21 @@
 {%block title%} Main page {%end%}
 
 {%block body%}
-    
-    
-
+    {%for i in range (length)%}  
+        <div align='center'>
+            <p>
+                <label for=""><b>name</b></label><br>
+                {{post[i][0]}}<br>
+                <label for=""><b>username</b></label><br>
+                {{post[i][1]}}<br>
+                <label for=""><b>Post</b></label><br>
+                {{post[i][2]}}<br>
+                <label for=""><b>Post Date</b></label><br>
+                {{post[i][3]}}<br>
+                <label for=""><b>Likes</b></label><br>
+                {{post[i][4]}}<br>
+                <hr>
+            </p>
+        </div>
+    {%end%}
 {%end%}

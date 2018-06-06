@@ -1,0 +1,38 @@
+{%extends base.html%}
+{%block background%}<body background='static/background/background1.jpg'>{%end%}
+{%block title%} Profile {%end%}
+{%block body%}
+<div style="font-family: 'Courier New', Courier, monospace">
+    <div align='center'>
+        <label for=""><b><b> Information</b></b></label><br>
+        <label for="name"><b>name:</b></label>
+        <p>{{val[0]}}</p>
+
+        <label for="username"><b>username</b></label>
+        <p>{{val[1]}}</p>
+
+        <label for="location"><b>location</b></label>
+        <p>{{val[3]}}</p>
+
+        <label for="bio"><b>bio</b></label>
+        <p>{{val[7]}}</p>
+
+        <label for="birthdate"><b>birthdate</b></label>
+        <p>{{val[4]}}</p>
+    </div>
+    <p align='center'><b>Posts</b></p>
+    {%for i in range (length)%}
+    <div align='center'>
+        <p>
+            <label for=""><b>Post</b></label>
+            {{post[i][2]}}<br>
+            <label for=""><b>Post Date</b></label>
+            {{post[i][3]}}<br>
+            <label for=""><b>Likes</b></label>
+            {{post[i][4]}}<br>
+            <hr>
+        </p>
+    </div>
+    {%end%}
+</div>
+{%end%}

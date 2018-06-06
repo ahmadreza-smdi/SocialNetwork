@@ -6,8 +6,10 @@
     <section style="font-family:'Courier New', Courier, monospace">
         <h1 align='center'><b><b>Settings</b></b></h1>
         <p align='center'><b>Do The Change And Click Submit</b></p>
-            <hr><br><br>
-        <form name="register" action="/settings" method="POST">
+            <hr>
+            {%if change=='true'%} <p><b>Changes Saved</b></p>{%end%}
+            <br>
+            <form name="register" action="/settings" method="POST">
             <label for="name"><b>Name</b></label><br>
             <input type="text" name="name" required="required" value="{{val[0]}}"><br><br>
             
