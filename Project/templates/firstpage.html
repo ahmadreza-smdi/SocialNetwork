@@ -4,20 +4,25 @@
 
 {%block body%}
     {%for i in range (length)%}  
-        <div align='center'>
-            <p>
-                <label for=""><b>name</b></label><br>
-                {{post[i][0]}}<br>
-                <label for=""><b>username</b></label><br>
-                {{post[i][1]}}<br>
-                <label for=""><b>Post</b></label><br>
-                {{post[i][2]}}<br>
-                <label for=""><b>Post Date</b></label><br>
-                {{post[i][3]}}<br>
-                <label for=""><b>Likes</b></label><br>
-                {{post[i][4]}}<br>
-                <hr>
-            </p>
+        <div align='center' class="hov">
+            <div style="border: 2px solid rgb(11, 132, 168); width:50%;padding: 2px;">
+          
+                <h3 style="font-family: 'Courier New', Courier, monospace;">NAME :</h3>
+                <p class="pp">{{post[i][0]}}</p>
+            
+                <h3 style="font-family: 'Courier New', Courier, monospace;">USER NAME :</h3>
+                <p class="pp">{{post[i][1]}}</p>
+            
+                <h3 style="font-family: 'Courier New', Courier, monospace;">POST :</h3>
+                <p class="pp">{{post[i][2]}}</p>
+            
+                <h3 style="font-family: 'Courier New', Courier, monospace;">DATE :</h3>
+                <p class="pp">{{post[i][3]}}</p>
+            
+                <h3 style="font-family: 'Courier New', Courier, monospace;">LIKE :</h3>
+                <p class="pp">{{post[i][4]}}<br> <button type="submit" formmethod="POST" formaction="/likes"> Like</button></p>
+                
+            </div>
         </div>
     {%end%}
 {%end%}

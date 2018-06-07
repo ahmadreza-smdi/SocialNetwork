@@ -102,6 +102,7 @@ class SignInHandler(BaseHandler):
 class ForgetPassHandler(BaseHandler):
     def get(self):
         self.render("forgetpass.html")
+        #we have not have any server but in here we email the guy his password
 
 
 class profile(BaseHandler):
@@ -159,17 +160,16 @@ class SignUpHandler(BaseHandler):
         self.application.db.commit()
         self.render("Signin.html",greeting='true',wrong='false')
 
-def make_app():
+if __name__ == "__main__":
 
     settings = {
         "static_path": os.path.join(os.path.dirname(__file__), "static"),
         "template_path": os.path.join(os.path.dirname(__file__), "templates"),
         "cookie_secret": generateRandomString(50),
         "login_url": "/signin",
-
     }
 
-    return tornado.web.Application([
+    app = tornado.web.Application([
         (r"/", MainHandler),
         (r"/signup", SignUpHandler),
         (r"/signin",SignInHandler),
@@ -179,12 +179,10 @@ def make_app():
         (r"/about",about),
         (r"/settings",setting),
         (r"/profile",profile),
-        (r"/post",postHandler)
+        (r"/post",postHandler),
+        (r"/likes",like)
     ], **settings)
 
-
-if __name__ == "__main__":
-    app = make_app()
     app.db = sqlite3.connect("db.sqlite")
     app.listen(8989)
     tornado.ioloop.IOLoop.current().start()
