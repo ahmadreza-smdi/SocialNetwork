@@ -1,4 +1,4 @@
-# JUPPITER social network
+## JUPPITER social network
 Juppiter is a semi social network, powered by tornado freamwork
 
 ## Prerequisites
