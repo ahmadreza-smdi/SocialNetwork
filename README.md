@@ -1,7 +1,7 @@
 ## JUPPITER social network
 Juppiter is a semi social network, powered by tornado freamwork
 
-## Prerequisites
+### Prerequisites
 
 What things you need to install the software and how to install them
 
