@@ -1,18 +1,59 @@
-# Internet Engineering
+# JUPPITER social network
+Juppiter is a semi social network, powered by tornado freamwork
 
-This project represents **University of Kashan IE course** of *2018*.
+## Prerequisites
 
-The contributors to this project are as listed.
+What things you need to install the software and how to install them
 
-* **Ahmadreza Samadi** – *Administrator* – [email](mailto:Ahmadreza.smdi@gmail.com) – [Gitlab repo](@ahmadreza.smdi)
+the project is based on python, first step is installing python
 
-The Project advisors :
-**Professor Ahmad Yoosofan**. – [email](yoosofan@kashanu.ac.ir) – [Gitlab repo](@usofan)
+#### Ubuntu
+```
+sudo apt-get update
+sudo apt-get install python3.6
+```
+#### CentOS
+```
+sudo yum update
+sudo yum install yum-utils
+```
+#### Fedora
+```
+sudo dnf install python36
+```
+#### Arch linux
+```
+packman -S python
+```
+the second step is to install pip3 
+```
+sudo apt-get -y install python3-pip
 
-Alireza mohammadi. – [email](alireza_6313@yahoo.com) – [Gitlab repo](@alireza_mohammadi)
+```
+Then the third step is installing tornado web freamwork
+#### Tornado
+```
+pip3 install tornado
+```
 
-For more info, visit the following pages.
-* Contributing guide [CONTRIBUTING.md](CONTRIBUTING.md)
-* Project Walkthrough [WALKTHROUGH.md](WALKTHROUGH.md)
+## Running the project
+All the work is done in server file in server.py
+```
+python3 server.py
+```
+
+## Built With
+
+* [Python](https://www.python.org/) - Programming language
+* [Tornado](https://www.tornadoweb.org) - Web freamwork
+* [Html](https://developer.mozilla.org/en/docs/Web/HTML) - Hypertext Markup Language
+* [css](https://developer.mozilla.org/en-US/docs/Web/CSS) - Cascading Style Sheets
+* [Java script](https://www.javascript.com) - programming language
+* [boot strap](https://getbootstrap.com) - Front-end framework
+* [jquery](https://jquery.com) - JavaScript library
+
+## Authors
+
+* **Ahmadreza Samadi** - *Developer* - [Ahmadreza samadi](https://github.com/ahmadreza-smdi)
 
 *Thanks for your attention.*
