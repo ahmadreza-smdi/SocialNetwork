@@ -26,6 +26,7 @@ sudo dnf install python36
 packman -S python
 ```
 the second step is to install pip3 
+####pip3
 ```
 sudo apt-get -y install python3-pip
 
